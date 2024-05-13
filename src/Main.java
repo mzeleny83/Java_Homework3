@@ -8,6 +8,15 @@ public class Guest {
     private String Name;
     private String Surname;
     private LocalDate Birthdate;
+
+
+    public Guest(String name, String surname, LocalDate birthdate) {
+        Name = name;
+        Surname = surname;
+        Birthdate = birthdate;
+
+
+    }
 }
 
 public class Room {
@@ -17,6 +26,17 @@ public class Room {
     private boolean hasBalcony;
     private boolean isSeaSide;
     private BigDecimal price;
+
+    public Room(int number, int beds, LocalDate birthdate, boolean hasBalcony, boolean isSeaSide, BigDecimal price) {
+        this.number = number;
+        this.beds = beds;
+        this.birthdate = birthdate;
+        this.hasBalcony = hasBalcony;
+        this.isSeaSide = isSeaSide;
+        this.price = price;
+    }
+
+
 }
 
 public class Booking {
@@ -24,6 +44,15 @@ public class Booking {
     private LocalDate startDate;
     private LocalDate endaDate;
     private boolean isBusinessTrip;
+
+    public Booking(List<Guest> guests, LocalDate startDate, LocalDate endaDate, boolean isBusinessTrip) {
+        this.guests = guests;
+        this.startDate = startDate;
+        this.endaDate = endaDate;
+        this.isBusinessTrip = isBusinessTrip;
+    }
+
+
 }
 
 public class ListOfBookings{
