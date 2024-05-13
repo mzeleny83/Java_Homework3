@@ -19,8 +19,9 @@ public class Room {
     private BigDecimal price;
 }
 
-public class Booking{
-    private list <String> guests;
+public class Booking {
+    private list<Guest> guests;
     private LocalDate startDate;
     private LocalDate endaDate;
     private boolean isBusinessTrip;
+}
