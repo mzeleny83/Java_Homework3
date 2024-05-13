@@ -5,17 +5,15 @@ import java.util.List;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Guest {
-    private String Name;
-    private String Surname;
-    private LocalDate Birthdate;
+    private String name;
+    private String surname;
+    private LocalDate birthdate;
 
 
     public Guest(String name, String surname, LocalDate birthdate) {
-        Name = name;
-        Surname = surname;
-        Birthdate = birthdate;
-
-
+        this.name = name;
+        this.surname = surname;
+        this.birthdate = birthdate;
     }
 }
 
