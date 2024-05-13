@@ -20,8 +20,21 @@ public class Room {
 }
 
 public class Booking {
-    private list<Guest> guests;
+    private List<Guest> guests;
     private LocalDate startDate;
     private LocalDate endaDate;
     private boolean isBusinessTrip;
 }
+
+public class ListOfBookings{
+    private List<Booking> bookingsList;
+
+    public Booking getBooking(int index) {
+        if (index >= 0 && index < bookingsList.size()) {
+            return bookingsList.get(index);
+        } else {
+            return null; // or throw an exception
+        }
+    }
+
+    }
