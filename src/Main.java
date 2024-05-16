@@ -29,6 +29,9 @@ Room room3=new Room(3,3,2400,false,true);
 Booking booking1=new Booking(<guest1>,1,19,7,2021,26,7,2021,true)
 Booking booking1=new Booking(<guest1,guest2>,3,1,9,2021,14,9,2021,true)
 
+System.out.println(booking1);
+System.out.println(booking2);
+
 
 
 
