@@ -26,8 +26,8 @@ Room room1=new Room(1,1,1000,true,true);
 Room room2=new Room(2,1,1000,true,true);
 Room room3=new Room(3,3,2400,false,true);
 
-Booking booking1=new Booking(<guest1>,1,19,7,2021,26,7,2021,true)
-Booking booking1=new Booking(<guest1,guest2>,3,1,9,2021,14,9,2021,true)
+Booking booking1 = new Booking(guest1, room1, LocalDate.of(2021, 7, 19), LocalDate.of(2021, 7, 26), true);
+Booking booking2 = new Booking(List.of(guest1, guest2), room3, LocalDate.of(2021, 9, 1), LocalDate.of(2021, 9, 14), true);
 
 System.out.println(booking1);
 System.out.println(booking2);
