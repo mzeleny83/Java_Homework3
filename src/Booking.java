@@ -3,8 +3,16 @@ import java.util.List;
 
 public class Booking {
     private List<Guest> guests;
+    private int roomNumber;
+    private LocalDate startDate;
     private LocalDate endaDate;
     private boolean isBusinessTrip;
+
+
+    public int getRoomNumber() {
+        return roomNumber;
+    }
+
 
     public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
@@ -22,7 +30,6 @@ public class Booking {
         isBusinessTrip = businessTrip;
     }
 
-    private LocalDate startDate;
 
     public LocalDate getEndaDate() {
         return endaDate;
