@@ -22,6 +22,13 @@ List<Guest> guests = new ArrayList<>();
 }
 }
 
+Room room1=new Room(1,1,1000,true,true);
+Room room2=new Room(2,1,1000,true,true);
+Room room3=new Room(3,3,2400,false,true);
+
+Booking booking1=new Booking(<guest1>,1,19,7,2021,26,7,2021,true)
+Booking booking1=new Booking(<guest1,guest2>,3,1,9,2021,14,9,2021,true)
+
 
 
 
