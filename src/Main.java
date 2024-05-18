@@ -26,8 +26,8 @@ public class Main {
                         Room room2 = new Room(2, 1, true, true,  BigDecimal.valueOf(1000));
                         Room room3 = new Room(3, 3, true, false, BigDecimal.valueOf(2400));
 
-                        Booking booking1 = new Booking(guest1, room1, LocalDate.of(2021, 7, 19), LocalDate.of(2021, 7, 26), true);
-                        Booking booking2 = new Booking(List.of(guest1, guest2), room3, LocalDate.of(2021, 9, 1), LocalDate.of(2021, 9, 14), true);
+                        Booking booking1 = new Booking(List.of(guest1), 1, LocalDate.of(2021, 7, 19), LocalDate.of(2021, 7, 26), true);
+                        Booking booking2 = new Booking(List.of(guest1, guest2), 3, LocalDate.of(2021, 9, 1), LocalDate.of(2021, 9, 14), true);
                         //Booking booking2 = new Booking(new ArrayList<>(List.of(guest1, guest2)), room3, LocalDate.of(2021, 9, 1), LocalDate.of(2021, 9, 14), true);
 
                         System.out.println(booking1);

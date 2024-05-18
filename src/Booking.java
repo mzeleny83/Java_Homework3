@@ -8,7 +8,12 @@ public class Booking {
     private LocalDate endaDate;
     private boolean isBusinessTrip;
 
-    public Booking(Guest guest1, Room room1, LocalDate of, LocalDate of1, boolean b) {
+    public Booking(List<Guest> guests, int roomNumber, LocalDate startDate, LocalDate endaDate, boolean isBusinessTrip) {
+        this.guests = guests;
+        this.roomNumber = roomNumber;
+        this.startDate = startDate;
+        this.endaDate = endaDate;
+        this.isBusinessTrip = isBusinessTrip;
     }
 
 
