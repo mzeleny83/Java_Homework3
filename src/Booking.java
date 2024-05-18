@@ -8,6 +8,9 @@ public class Booking {
     private LocalDate endaDate;
     private boolean isBusinessTrip;
 
+    public Booking(Guest guest1, Room room1, LocalDate of, LocalDate of1, boolean b) {
+    }
+
 
     public int getRoomNumber() {
         return roomNumber;
