@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Booking {
     private List<Guest> guests;
-    private int roomNumber;
+    private Room room;
     private LocalDate startDate;
     private LocalDate endaDate;
     private boolean isBusinessTrip;
@@ -20,7 +20,6 @@ public class Booking {
     public int getRoomNumber() {
         return roomNumber;
     }
-
 
     public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
@@ -55,14 +54,12 @@ public class Booking {
         return isBusinessTrip;
     }
 
-
-
-    public Booking(List<Guest> guests, LocalDate startDate, LocalDate endaDate, boolean isBusinessTrip) {
-        this.guests = guests;
-        this.startDate = startDate;
-        this.endaDate = endaDate;
-        this.isBusinessTrip = isBusinessTrip;
+    public BigDecimal getPrice() {
+        return room.getPrice().multiply(BigDecimal.valueOf(getBookingLength()));
     }
 
+    public int getNumberOfGuests() {
+        return guests.size();
 
-}
+    }
+
