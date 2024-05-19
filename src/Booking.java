@@ -10,15 +10,15 @@ public class Booking {
 
     public Booking(List<Guest> guests, int roomNumber, LocalDate startDate, LocalDate endaDate, boolean isBusinessTrip) {
         this.guests = guests;
-        this.roomNumber = roomNumber;
+        this.room = room;
         this.startDate = startDate;
         this.endaDate = endaDate;
         this.isBusinessTrip = isBusinessTrip;
     }
 
 
-    public int getRoomNumber() {
-        return roomNumber;
+    public int getRoom() {
+        return room;
     }
 
     public void setStartDate(LocalDate startDate) {
