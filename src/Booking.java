@@ -10,15 +10,6 @@ public class Booking {
     private LocalDate endaDate;
     private boolean isBusinessTrip;
 
-}
-
-public void getRoomNumber() {
-    return roomNumber;
-}
-
-public void setRoomNumber(int roomNumber) {
-    this.roomNumber = roomNumber;
-
     public Booking(List<Guest> guests, int roomNumber, LocalDate startDate, LocalDate endaDate, boolean isBusinessTrip) {
         this.guests = guests;
         this.roomNumber = roomNumber;
@@ -27,9 +18,12 @@ public void setRoomNumber(int roomNumber) {
         this.isBusinessTrip = isBusinessTrip;
     }
 
+    public int getRoomNumber() {
+        return roomNumber;
+    }
 
-    public Room getRoom() {
-        return room;
+    public void setRoomNumber(int roomNumber) {
+        this.roomNumber = roomNumber;
     }
 
     public void setStartDate(LocalDate startDate) {
@@ -48,7 +42,6 @@ public void setRoomNumber(int roomNumber) {
         isBusinessTrip = businessTrip;
     }
 
-
     public LocalDate getEndaDate() {
         return endaDate;
     }
@@ -65,19 +58,26 @@ public void setRoomNumber(int roomNumber) {
         return isBusinessTrip;
     }
 
-    public int getBookingLength(){
-    LocalDate startDate = LocalDate.now();
-    LocalDate endDate = LocalDate.of(2023,6,1);
-    long daysBetween = ChronoUnit.DAYS.between(startDate, endDate);
-    return (int) daysBetween;
+    public int getBookingLength() {
+        return (int) ChronoUnit.DAYS.between(startDate, endaDate);
     }
 
-    public BigDecimal getPrice() {
-        return room.getPrice().multiply(BigDecimal.valueOf(getBookingLength()));
+    public BigDecimal getPrice(BigDecimal roomPrice) {
+        return roomPrice.multiply(BigDecimal.valueOf(getBookingLength()));
     }
 
     public int getNumberOfGuests() {
         return guests.size();
+    }
 
-    }}
-
+    @Override
+    public String toString() {
+        return "Booking{" +
+                "guests=" + guests +
+                ", roomNumber=" + roomNumber +
+                ", startDate=" + startDate +
+                ", endaDate=" + endaDate +
+                ", isBusinessTrip=" + isBusinessTrip +
+                '}';
+    }
+}

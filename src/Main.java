@@ -3,13 +3,11 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-        public static <Booking> void main(String[] args) {
+        public static void main(String[] args) {
 
-                LocalDate birthdate1=LocalDate.of(1993,03,13);
-                LocalDate birthdate2=LocalDate.of(1995,05,05);
+                LocalDate birthdate1 = LocalDate.of(1993, 3, 13);
+                LocalDate birthdate2 = LocalDate.of(1995, 5, 5);
 
                 Guest guest1 = new Guest("Jana", "Malíková", birthdate1);
                 Guest guest2 = new Guest("Jan", "Dvořáček", birthdate2);
@@ -22,16 +20,15 @@ public class Main {
                         System.out.println(guest);
                 }
 
-                        Room room1 = new Room(1, 1, true, true,  BigDecimal.valueOf(1000));
-                        Room room2 = new Room(2, 1, true, true,  BigDecimal.valueOf(1000));
-                        Room room3 = new Room(3, 3, true, false, BigDecimal.valueOf(2400));
+                Room room1 = new Room(1, 1, true, true, BigDecimal.valueOf(1000));
+                Room room2 = new Room(2, 1, true, true, BigDecimal.valueOf(1000));
+                Room room3 = new Room(3, 3, true, false, BigDecimal.valueOf(2400));
 
-                        Booking booking1 = new Booking(List.of(guest1), 1, LocalDate.of(2021, 7, 19), LocalDate.of(2021, 7, 26), true);
-                        Booking booking2 = new Booking(List.of(guest1, guest2), 3, LocalDate.of(2021, 9, 1), LocalDate.of(2021, 9, 14), true);
-                        //Booking booking2 = new Booking(new ArrayList<>(List.of(guest1, guest2)), room3, LocalDate.of(2021, 9, 1), LocalDate.of(2021, 9, 14), true);
+                Booking booking1 = new Booking(List.of(guest1), 1, LocalDate.of(2021, 7, 19), LocalDate.of(2021, 7, 26), true);
+                Booking booking2 = new Booking(List.of(guest1, guest2), 3, LocalDate.of(2021, 9, 1), LocalDate.of(2021, 9, 14), true);
 
-                        System.out.println(booking1);
-                        System.out.println(booking2);
+                System.out.println(booking1);
+                System.out.println(booking2);
 
                 BookingManager bookingManager = new BookingManager();
                 fillBookings(bookingManager);
@@ -53,16 +50,16 @@ public class Main {
                 Room room2 = new Room(2, 1, true, true, BigDecimal.valueOf(1000));
                 Room room3 = new Room(3, 3, true, false, BigDecimal.valueOf(2400));
 
-                bookingManager.addBooking(new Booking(karelDvorak1, room3, LocalDate.of(2023, 6, 1), LocalDate.of(2023, 6, 7), true));
-                bookingManager.addBooking(new Booking(karelDvorak2, room2, LocalDate.of(2023, 7, 18), LocalDate.of(2023, 7, 21), false));
+                bookingManager.addBooking(new Booking(List.of(karelDvorak1), 3, LocalDate.of(2023, 6, 1), LocalDate.of(2023, 6, 7), true));
+                bookingManager.addBooking(new Booking(List.of(karelDvorak2), 2, LocalDate.of(2023, 7, 18), LocalDate.of(2023, 7, 21), false));
 
                 for (int i = 1; i <= 10; i++) {
                         LocalDate startDate = LocalDate.of(2023, 8, i * 2 - 1);
                         LocalDate endDate = startDate.plusDays(1);
-                        bookingManager.addBooking(new Booking(karolinaTmava, room2, startDate, endDate, false));
+                        bookingManager.addBooking(new Booking(List.of(karolinaTmava), 2, startDate, endDate, false));
                 }
 
-                bookingManager.addBooking(new Booking(karolinaTmava, room3, LocalDate.of(2023, 8, 1), LocalDate.of(2023, 8, 31), false));
+                bookingManager.addBooking(new Booking(List.of(karolinaTmava), 3, LocalDate.of(2023, 8, 1), LocalDate.of(2023, 8, 31), false));
         }
 
         private static void printBookings(List<Booking> bookings) {
@@ -74,7 +71,7 @@ public class Main {
         private static void printFirstNRecreationalBookings(List<Booking> bookings, int n) {
                 int count = 0;
                 for (Booking booking : bookings) {
-                        if (!booking.isWorkStay()) {
+                        if (!booking.isBusinessTrip()) {
                                 System.out.println(booking);
                                 count++;
                                 if (count >= n) break;
@@ -92,14 +89,3 @@ public class Main {
                 System.out.println("Počet rezervací s více než dvěma hosty: " + moreThanTwoGuests);
         }
 }
-
-
-
-
-
-
-
-
-
-
-
