@@ -6,7 +6,7 @@ import java.util.List;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-        public static void main(String[] args) {
+        public static <Booking> void main(String[] args) {
 
                 LocalDate birthdate1=LocalDate.of(1993,03,13);
                 LocalDate birthdate2=LocalDate.of(1995,05,05);
@@ -94,7 +94,7 @@ public class Main {
 }
 
 
-                }
+
 
 
 
