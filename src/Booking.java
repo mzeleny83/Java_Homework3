@@ -1,69 +1,52 @@
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 public class Booking {
     private List<Guest> guests;
     private int roomNumber;
-    private LocalDate startDate;
-    private LocalDate endaDate;
-    private boolean isBusinessTrip;
+    private LocalDate fromDate;
+    private LocalDate toDate;
+    private boolean businessTrip;
+    private BigDecimal roomPrice;
+    private boolean seaView;
 
-    public Booking(List<Guest> guests, int roomNumber, LocalDate startDate, LocalDate endaDate, boolean isBusinessTrip) {
+    public Booking(List<Guest> guests, int roomNumber, LocalDate fromDate, LocalDate toDate, boolean businessTrip, BigDecimal roomPrice, boolean seaView) {
         this.guests = guests;
         this.roomNumber = roomNumber;
-        this.startDate = startDate;
-        this.endaDate = endaDate;
-        this.isBusinessTrip = isBusinessTrip;
-    }
-
-    public int getRoomNumber() {
-        return roomNumber;
-    }
-
-    public void setRoomNumber(int roomNumber) {
-        this.roomNumber = roomNumber;
-    }
-
-    public void setStartDate(LocalDate startDate) {
-        this.startDate = startDate;
-    }
-
-    public void setGuests(List<Guest> guests) {
-        this.guests = guests;
-    }
-
-    public void setEndaDate(LocalDate endaDate) {
-        this.endaDate = endaDate;
-    }
-
-    public void setBusinessTrip(boolean businessTrip) {
-        isBusinessTrip = businessTrip;
-    }
-
-    public LocalDate getEndaDate() {
-        return endaDate;
+        this.fromDate = fromDate;
+        this.toDate = toDate;
+        this.businessTrip = businessTrip;
+        this.roomPrice = roomPrice;
+        this.seaView = seaView;
     }
 
     public List<Guest> getGuests() {
         return guests;
     }
 
-    public LocalDate getStartDate() {
-        return startDate;
+    public int getRoomNumber() {
+        return roomNumber;
+    }
+
+    public LocalDate getFromDate() {
+        return fromDate;
+    }
+
+    public LocalDate getToDate() {
+        return toDate;
     }
 
     public boolean isBusinessTrip() {
-        return isBusinessTrip;
+        return businessTrip;
     }
 
-    public int getBookingLength() {
-        return (int) ChronoUnit.DAYS.between(startDate, endaDate);
+    public BigDecimal getRoomPrice() {
+        return roomPrice;
     }
 
-    public BigDecimal getPrice(BigDecimal roomPrice) {
-        return roomPrice.multiply(BigDecimal.valueOf(getBookingLength()));
+    public boolean hasSeaView() {
+        return seaView;
     }
 
     public int getNumberOfGuests() {
@@ -75,9 +58,11 @@ public class Booking {
         return "Booking{" +
                 "guests=" + guests +
                 ", roomNumber=" + roomNumber +
-                ", startDate=" + startDate +
-                ", endaDate=" + endaDate +
-                ", isBusinessTrip=" + isBusinessTrip +
+                ", fromDate=" + fromDate +
+                ", toDate=" + toDate +
+                ", businessTrip=" + businessTrip +
+                ", roomPrice=" + roomPrice +
+                ", seaView=" + seaView +
                 '}';
     }
 }

@@ -1,40 +1,34 @@
 import java.time.LocalDate;
 
 public class Guest {
-    private String name;
-    private String surname;
+    private String firstName;
+    private String lastName;
     private LocalDate birthdate;
 
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setBirthdate(LocalDate birthdate) {
+    public Guest(String firstName, String lastName, LocalDate birthdate) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.birthdate = birthdate;
     }
 
-
-
-    public String getSurname() {
-        return surname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public String getName() {
-        return name;
+    public String getLastName() {
+        return lastName;
     }
 
     public LocalDate getBirthdate() {
         return birthdate;
     }
 
-
-    public Guest(String name, String surname, LocalDate birthdate) {
-        this.name = name;
-        this.surname = surname;
-        this.birthdate = birthdate;
+    @Override
+    public String toString() {
+        return "Guest{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", birthdate=" + birthdate +
+                '}';
     }
 }

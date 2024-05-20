@@ -20,7 +20,7 @@ public class BookingManager {
         public List<Booking> getBookings() {
             return bookings;
         }
-                public void clearBookings() {
+        public void clearBookings() {
             bookings.clear();
         }
 
